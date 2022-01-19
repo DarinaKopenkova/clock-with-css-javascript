@@ -1,0 +1,204 @@
+body {
+    display: block;
+
+}
+
+.digital-clock {
+    display: flex;
+    justify-content: center;
+    background-color: #091921;
+    padding-top: 50px;
+}
+
+.digital-clock__container {
+    display: flex;
+    background-color: #7B68EE;
+}
+
+#digital-clock__container__hour, #digital-clock__container__minutes, #digital-clock__container__seconds {
+    border: 1px solid #ffffff;
+    padding: 15px;
+    margin: 10px;
+    color: #F0FFFF;
+}
+
+span {
+    margin-top: 25px;
+    color: #F0FFFF;
+
+}
+
+.arrow-clock {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-left: 40px;
+}
+
+.arrow-clock__hour {
+    border-left: 2px solid white;
+    height: 30%;
+    position: absolute;
+    left: 48.75%;
+    top: 20%;
+    transform-origin: 50% 100%;
+    -webkit-animation: spin 10s infinite reverse linear;
+    animation: spin 20s infinite reverse linear;
+}
+
+.arrow-clock__minutes {
+    border-left: 2px solid white;
+    height: 45%;
+    position: absolute;
+    left: 48.75%;
+    top: 5%;
+    transform-origin: 50% 100%;
+    -webkit-animation: spin 10s infinite reverse linear;
+    animation: spin 10s infinite reverse linear;
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+
+
+.arrow-clock__hr {
+    background: green;
+    height: 20%;
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+    animation: rotate 43200s infinite linear;
+    z-index: 4;
+    border-radius: 6px 6px 0 0;
+}
+
+.arrow-clock__min {
+    background: yellow;
+    height: 40%;
+    left: 50%;
+    top: 10%;
+    position: absolute;
+    transform-origin: 50% 100%;
+    width: 2%;
+    animation: rotate 3600s infinite steps(60);
+    border-radius: 6px 6px 0 0;
+}
+
+.arrow-clock__sec {
+    background: #ffffff;
+    height: 45%;
+    left: 50%;
+    top: 5%;
+    position: absolute;
+    transform-origin: 50% 100%;
+    width: 1%;
+    z-index: 8;
+    animation: rotate 60s infinite steps(60);
+    border-radius: 6px 6px 0 0;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.container-trird-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background: #091921;
+}
+
+.clock {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png);
+    radial-gradient: (circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9, 25, 33, 1) 38%);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
+        inset 0 -15px 15px #191919,
+        0 15px 15px rgba(134, 134, 134, 0.35),
+        inset 0 15px 15px #191919;
+}
+
+.clock:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.clock .clock__hour, .clock .clock__min, .clock .clock__sec {
+    position: absolute;
+}
+
+.clock .clock__hour, .clock__hour__hr {
+    width: 160px;
+    height: 160px;
+}
+
+.clock .clock__min, .clock__min__mn {
+    width: 190px;
+    height: 190px;
+}
+
+.clock .clock__sec, .clock__sec__sc {
+    width: 230px;
+    height: 230px;
+}
+
+.clock__hour__hr, .clock__min__mn, .clock__sec__sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.clock__hour__hr:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: #ffc600;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.clock__min__mn:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: #ffffff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.clock__sec__sc:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 140px;
+    background-color: #ffffff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
